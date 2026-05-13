@@ -1,0 +1,34 @@
+# Core dependencies
+torch>=1.9.0
+torchvision>=0.10.0
+numpy>=1.21.0
+
+# NLP dependencies
+transformers>=4.20.0
+sentence-transformers>=2.2.0
+nltk>=3.6
+
+# Model format dependencies
+onnx>=1.12.0
+onnxruntime>=1.12.0  # For running ONNX models
+onnx2torch>=1.5.0
+
+# Reporting dependencies
+matplotlib>=3.5.0
+reportlab>=3.6.0
+
+# LLM Enhancement (Optional - for Phase 5 diagnostics)
+python-dotenv>=1.0.0    # For reading .env files
+openai>=1.0.0           # For OpenAI and GitHub Models API
+anthropic>=0.21.0       # For Anthropic Claude API
+
+# Audio Processing (for Audio Diagnostics)
+librosa>=0.10.0         # Audio analysis, STFT, spectral features
+soundfile>=0.12.0       # Audio file I/O
+torchaudio>=2.0.0       # PyTorch audio processing
+# Optional quality metrics:
+# pesq>=0.0.4           # Perceptual Evaluation of Speech Quality
+# pystoi>=0.3.3         # Short-Time Objective Intelligibility
+
+# Optional: For faster NLP inference
+# accelerate>=0.20.0

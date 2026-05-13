@@ -1,0 +1,70 @@
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Virtual environments ──────────────────────────────
+venv/
+venv311/
+.venv/
+env/
+
+# ── ML Models (too large for GitHub) ──────────────────
+models/*.onnx
+models/*.pth
+models/*.pt
+models/*.h5
+models/*.bin
+models/*.onnx.data
+models/finbert/
+models/nlp/
+models/New WinRAR ZIP archive/
+
+# ── Datasets (too large for GitHub) ───────────────────
+data/
+datasets/
+
+# ── Generated reports (runtime output) ────────────────
+reports/*.json
+reports/*.pdf
+reports/_charts/
+reports/__pycache__/
+
+# ── Environment & secrets ─────────────────────────────
+.env
+.env.local
+
+# ── Temp / junk files ────────────────────────────────
+tmpclaude-*
+*.pdf
+cleanup_plan.txt
+custom_columns.csv
+disaster_test_data.json
+labels.json
+2.4
+
+# ── tf_idf model artifacts ───────────────────────────
+tf_idf model/
+
+# ── Node / Frontend (handled by frontend/.gitignore) ─
+frontend/node_modules/
+frontend/.next/
+frontend/.vercel/
+
+# ── OS files ──────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Stitch UI screens ────────────────────────────────
+ui/

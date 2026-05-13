@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/* ── Design System Tokens ──────────────────────────────────────────────── */
+
+:root {
+  /* Core palette */
+  --bg-void: #050505;
+  --bg-primary: #0A0A0A;
+  --bg-surface: rgba(18, 18, 18, 0.6);
+  --bg-elevated: rgba(24, 24, 24, 0.7);
+  --bg-hover: rgba(35, 35, 35, 0.5);
+  --bg-input: rgba(8, 8, 8, 0.6);
+
+  /* Borders */
+  --border-default: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.12);
+  --border-focus: rgba(255, 255, 255, 0.20);
+
+  /* Text */
+  --text-primary: #E5E5E5;
+  --text-secondary: #888888;
+  --text-muted: #4A4A4A;
+
+  /* Accent & semantic */
+  --accent: #FFFFFF;
+  --accent-dim: rgba(255, 255, 255, 0.7);
+  --accent-subtle: rgba(255, 255, 255, 0.06);
+  --accent-glow: rgba(255, 255, 255, 0.08);
+  --red-team: #A3443D;
+  --red-team-subtle: rgba(163, 68, 61, 0.10);
+  --blue-team: #4A6FA5;
+  --blue-team-subtle: rgba(74, 111, 165, 0.10);
+  --success: #4A8C5C;
+  --success-subtle: rgba(74, 140, 92, 0.10);
+  --warning: #A38A3D;
+  --error: #A3443D;
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #050505 0%, #111111 50%, #050505 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  --gradient-accent-line: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  --gradient-radial-glow: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+}
+
+/* ── Global Base ───────────────────────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+/* ── Glass Utilities ───────────────────────────────────────────────────── */
+
+.glass-nav {
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.glass-card {
+  background: rgba(18, 18, 18, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.02),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(-4px);
+}
+
+.glass-elevated {
+  background: rgba(24, 24, 24, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-xl);
+}
+
+/* ── Button Styles ─────────────────────────────────────────────────────── */
+
+.btn-primary {
+  background: #E5E5E5;
+  color: #0A0A0A;
+  font-weight: 500;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: var(--radius-md);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 250ms ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.btn-primary:hover {
+  background: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-primary-lg {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 18px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+.btn-primary-lg:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  height: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: all 250ms ease;
+}
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary-lg {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 18px;
+  border-radius: var(--radius-lg);
+}
+
+/* ── Animations ────────────────────────────────────────────────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 2s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── Accessibility ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-float,
+  .animate-breathe {
+    animation: none;
+  }
+}
